@@ -7,9 +7,9 @@
 
         default_layer {
             bindings = <
-                &kp ESC    &kp N1  &kp N2   &kp N3    &kp SPACE &kp BACKSPACE
+                &kp ESC    &kp N1  &kp N2   &kp N3    &kp SPACE &kp BSPC
                 &kp E      &kp N4  &kp N5   &kp DOT   &kp UP    &kp ENTER
-                &kp LSHIFT &kp N4  &kp FN   &kp LEft  &kp DOWN  &kp RIGHT
+                &kp LSHFT  &kp N4  &kp LEFT &kp LEFT  &kp DOWN  &kp RIGHT
                 &kp LCTRL  &kp N4  &kp LALT &kp SPACE &kp SPACE &kp SPACE
             >;
         };
