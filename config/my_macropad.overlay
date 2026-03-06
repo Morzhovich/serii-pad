@@ -1,0 +1,26 @@
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+    };
+
+    kscan0: kscan_0 {
+        compatible = "zmk,kscan-gpio-matrix";
+        diode-direction = "col2row"; // Если диоды стоят от столбцов к строкам
+
+        col-gpios
+            = <&pro_micro 10 GPIO_ACTIVE_HIGH> // Сюда впиши свои номера пинов
+            , <&pro_micro 111 GPIO_ACTIVE_HIGH>
+            , <&pro_micro 113 GPIO_ACTIVE_HIGH>
+            , <&pro_micro 02 GPIO_ACTIVE_HIGH>
+            , <&pro_micro 29 GPIO_ACTIVE_HIGH>
+            , <&pro_micro 31 GPIO_ACTIVE_HIGH>
+            ;
+
+        row-gpios
+            = <&pro_micro 011 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 104 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 106 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 100 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ;
+    };
+};
