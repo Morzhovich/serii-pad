@@ -14,12 +14,22 @@
     };
 
     behaviors {
+        // TD0: Ctrl+V / Ctrl+C
         td0: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_COPY_PASTE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp LC(V)>, <&kp LC(C)>;
+            bindings = <&kp LC(C)>, <&kp LC(V)>;
+        };
+
+        // TD1: Ctrl+Z / Ctrl+Y
+        td1: tap_dance_1 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_UNDO_REDO";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LC(Z)>, <&kp LC(Y)>;
         };
     };
 
@@ -38,7 +48,7 @@
         layer_1 {
             bindings = <
                 &kp ESC      &kp N6    &kp N7    &kp N8    &none     &kp DEL
-                &td0         &kp N9    &kp N0    &kp MINUS &kp UP    &kp ENTER
+                &td1         &kp N9    &kp N0    &kp MINUS &kp UP    &kp ENTER
                 &kp LSHFT    &none     &mo 1     &kp LEFT  &kp DOWN  &kp RIGHT
                 &kp LCTRL    &none     &kp LALT  &kp SPACE &none     &kp SPACE
             >;
