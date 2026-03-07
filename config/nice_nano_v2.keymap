@@ -7,7 +7,7 @@
     combos {
         compatible = "zmk,combos";
 
-        // Сброс Bluetooth (Стрелочки: UP 10, LEFT 14, DOWN 16, RIGHT 17)
+        // ПОЛНАЯ ОЧИСТКА ПАМЯТИ BT (ESC 0 + BACKSPACE 5)
         combo_bt_clear {
             timeout-ms = <50>;
             key-positions = <0 5>; 
@@ -18,7 +18,7 @@
         combo_bt_pair {
             timeout-ms = <50>;
             key-positions = <0 11>;
-            bindings = <&bt BT_SEL 0>;
+            bindings = <&bt BT_SEL 0>; // Переключает на профиль 0 и ищет ТОЛЬКО твой комп
         };
     };
 
