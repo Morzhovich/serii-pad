@@ -1,16 +1,46 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
 
 / {
+    // Секция комбо-нажатий
+    combos {
+        compatible = "zmk,combos";
+        combo_bt_clear {
+            timeout-ms = <50>;
+            key-positions = <10 14 16 17>; // Индексы: UP, LEFT, DOWN, RIGHT
+            bindings = <&bt BT_CLR>;       // Команда полной очистки текущего профиля
+        };
+    };
+
+    behaviors {
+        td0: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_COPY_PASTE";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LC(V)>, <&kp LC(C)>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-                &kp ESC    &kp N1  &kp N2   &kp N3    &none     &kp BSPC
-                &kp E      &kp N4  &kp N5   &kp DOT   &kp UP    &kp ENTER
-                &kp LSHFT  &none   &kp LEFT &kp LEFT  &kp DOWN  &kp RIGHT
-                &kp LCTRL  &none   &kp LALT &kp SPACE &none     &kp SPACE
+                &kp ESC      &kp N1    &kp N2    &kp N3    &none     &kp BSPC
+                &td0         &kp N4    &kp N5    &kp DOT   &kp UP    &kp ENTER
+                &kp LSHFT    &none     &mo 1     &kp LEFT  &kp DOWN  &kp RIGHT
+                &kp LCTRL    &none     &kp LALT  &kp SPACE &none     &kp SPACE
+            >;
+        };
+
+        layer_1 {
+            bindings = <
+                &kp ESC      &kp N6    &kp N7    &kp N8    &none     &kp DEL
+                &td0         &kp N9    &kp N0    &kp MINUS &kp UP    &kp ENTER
+                &kp LSHFT    &none     &mo 1     &kp LEFT  &kp DOWN  &kp RIGHT
+                &kp LCTRL    &none     &kp LALT  &kp SPACE &none     &kp SPACE
             >;
         };
     };
