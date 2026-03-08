@@ -28,7 +28,7 @@
 
         default_layer {
             bindings = <
-                &bt BT_SEL 0      &kp N1    &kp N2    &kp N3    &none     &kp BSPC
+                &bt ESC      &kp N1    &kp N2    &kp N3    &none     &kp BSPC
                 &td0         &kp N4    &kp N5    &kp DOT   &kp UP    &kp ENTER
                 &kp LSHFT    &none     &mo 1     &kp LEFT  &kp DOWN  &kp RIGHT
                 &kp LCTRL    &none     &kp LALT  &kp SPACE &none     &kp SPACE
