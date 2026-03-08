@@ -9,14 +9,14 @@
 
         // ПОЛНАЯ ОЧИСТКА ПАМЯТИ BT (ESC 0 + BACKSPACE 5)
         combo_bt_clear {
-            timeout-ms = <50>;
+            timeout-ms = <150>;
             key-positions = <0 5>; 
             bindings = <&bt BT_CLR>;
         };
 
         // ВКЛЮЧЕНИЕ СОПРЯЖЕНИЯ (ESC 0 + ENTER 11)
         combo_bt_pair {
-            timeout-ms = <50>;
+            timeout-ms = <150>;
             key-positions = <0 11>;
             bindings = <&bt BT_SEL 0>; // Переключает на профиль 0 и ищет ТОЛЬКО твой комп
         };
