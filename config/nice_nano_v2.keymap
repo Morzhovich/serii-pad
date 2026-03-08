@@ -37,7 +37,7 @@
 
         layer_1 {
             bindings = <
-                &kp ESC      &kp N6    &kp N7    &kp N8    &none     &kp &bt BT_CLR
+                &kp ESC      &kp N6    &kp N7    &kp N8    &none     &bt BT_CLR
                 &td1         &kp N9    &kp N0    &kp MINUS &kp UP    &bt BT_SEL 0
                 &kp LSHFT    &none     &mo 1     &kp LEFT  &kp DOWN  &kp RIGHT
                 &kp LCTRL    &none     &kp LALT  &kp SPACE &none     &kp SPACE
